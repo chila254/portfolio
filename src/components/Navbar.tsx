@@ -35,27 +35,8 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Menu */}
-          <ul
-            className={`hidden md:flex gap-8 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`transition-colors duration-200 ${
-                    theme === "dark" ? "hover:text-blue-400" : "hover:text-blue-600"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Theme Toggle & Hamburger */}
+          {/* Desktop Menu - Hidden, all links in kebab menu */}
+          {/* Theme Toggle & Kebab Menu */}
           <div className="flex items-center gap-4">
             {/* Theme Toggle Button */}
             <button
@@ -86,68 +67,63 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Hamburger Menu */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
-                theme === "dark"
-                  ? "bg-gray-800 text-white"
-                  : "bg-gray-200 text-gray-900"
-              }`}
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Kebab Menu */}
+            <div className="relative">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white"
+                    : "bg-gray-200 text-gray-900"
+                }`}
+                aria-label="Toggle menu"
               >
-                {isOpen ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
+                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
                   />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isOpen && (
+                <div
+                  className={`absolute right-0 mt-2 w-48 rounded-lg shadow-lg py-1 ${
+                    theme === "dark"
+                      ? "bg-gray-800 text-white"
+                      : "bg-white text-gray-900"
+                  } border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}
+                >
+                  <ul className="flex flex-col gap-1">
+                    {navLinks.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className={`block px-4 py-2 transition-colors duration-200 ${
+                            theme === "dark"
+                              ? "hover:bg-gray-700"
+                              : "hover:bg-gray-100"
+                          }`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div
-            className={`md:hidden pb-4 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
-            <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`block px-4 py-2 rounded-lg transition-colors duration-200 ${
-                      theme === "dark"
-                        ? "hover:bg-gray-800"
-                        : "hover:bg-gray-100"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </nav>
   );
