@@ -11,22 +11,23 @@ export default function Projects() {
     <div
       className={`min-h-screen transition-colors duration-300 ${theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"}`}
     >
-      <main className="max-w-7xl mx-auto px-4 py-20">
+      <main className="max-w-7xl mx-auto px-4 py-20 animate-fade-in-up">
         <h1
           className={`text-4xl font-bold mb-12 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
         >
           My Projects
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              github={project.github}
-              live={project.live}
-            />
+          {projects.map((project, index) => (
+            <div key={project.id} className={`animate-fade-in-up stagger-${(index % 5) + 1}`}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                github={project.github}
+                live={project.live}
+              />
+            </div>
           ))}
         </div>
       </main>

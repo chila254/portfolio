@@ -9,7 +9,7 @@ export default function Certifications() {
     <div
       className={`min-h-screen transition-colors duration-300 ${theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"}`}
     >
-      <main className="max-w-7xl mx-auto px-4 py-20">
+      <main className="max-w-7xl mx-auto px-4 py-20 animate-fade-in-up">
         <h1
           className={`text-4xl font-bold mb-12 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
         >
@@ -21,7 +21,7 @@ export default function Certifications() {
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            } animate-fade-in-up stagger-1`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               BBIT Degree
@@ -39,7 +39,7 @@ export default function Certifications() {
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            } animate-fade-in-up stagger-2`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Open Source Contribution
@@ -57,7 +57,7 @@ export default function Certifications() {
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            }`}
+            } animate-fade-in-up stagger-3`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Final Year Project

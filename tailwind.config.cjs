@@ -30,6 +30,13 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
+      animationDelay: {
+        '1': '0.1s',
+        '2': '0.2s',
+        '3': '0.3s',
+        '4': '0.4s',
+        '5': '0.5s',
+      },
     },
   },
   plugins: [],

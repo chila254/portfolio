@@ -11,7 +11,7 @@ export default function About() {
         theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"
       }`}
     >
-      <main className="max-w-7xl mx-auto px-4 py-20">
+      <main className="max-w-7xl mx-auto px-4 py-20 animate-fade-in-up">
         <h1
           className={`text-4xl font-bold mb-12 ${
             theme === "dark" ? "text-white" : "text-gray-900"
@@ -21,7 +21,7 @@ export default function About() {
         </h1>
 
         <div className="flex flex-col gap-12">
-          <div>
+          <div className="animate-fade-in-up stagger-1">
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -43,7 +43,7 @@ export default function About() {
             </p>
           </div>
 
-          <div>
+          <div className="animate-fade-in-up stagger-2">
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -105,7 +105,7 @@ export default function About() {
             </div>
           </div>
 
-          <div>
+          <div className="animate-fade-in-up stagger-3">
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -145,7 +145,7 @@ export default function About() {
             </div>
           </div>
 
-          <div>
+          <div className="animate-fade-in-up stagger-4">
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"

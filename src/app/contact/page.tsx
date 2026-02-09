@@ -9,7 +9,7 @@ export default function Contact() {
     <div
       className={`min-h-screen transition-colors duration-300 ${theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"}`}
     >
-      <main className="max-w-7xl mx-auto px-4 py-20">
+      <main className="max-w-7xl mx-auto px-4 py-20 animate-fade-in-up">
         <h1
           className={`text-4xl font-bold mb-12 ${theme === "dark" ? "text-white" : "text-gray-900"}`}
         >
@@ -26,7 +26,7 @@ export default function Contact() {
               theme === "dark"
                 ? "bg-gradient-to-br from-gray-900 to-gray-800"
                 : "bg-gradient-to-br from-gray-50 to-gray-100"
-            }`}
+            } animate-fade-in-up stagger-1`}
           >
             <div className="flex flex-col gap-8">
               <div>
