@@ -1,12 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -35,13 +48,12 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Menu - Hidden, all links in kebab menu */}
-          {/* Theme Toggle & Kebab Menu */}
+          {/* Theme Toggle & Hamburger Menu */}
           <div className="flex items-center gap-4">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-colors duration-300 ${
+              className={`p-2 rounded-lg transition-all duration-300 transform hover:scale-110 ${
                 theme === "dark"
                   ? "bg-gray-800 text-yellow-400"
                   : "bg-gray-200 text-gray-800"
@@ -67,19 +79,19 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Kebab Menu */}
-            <div className="relative">
+            {/* Hamburger Menu */}
+            <div className="relative" ref={menuRef}>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`p-2 rounded-lg transition-colors duration-300 ${
+                className={`p-2 rounded-lg transition-all duration-300 ${
                   theme === "dark"
                     ? "bg-gray-800 text-white"
                     : "bg-gray-200 text-gray-900"
-                }`}
+                } ${isOpen ? "rotate-90" : ""}`}
                 aria-label="Toggle menu"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-6 h-6 transition-transform duration-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -88,39 +100,49 @@ export default function Navbar() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
               </button>
 
-              {/* Dropdown Menu */}
-              {isOpen && (
-                <div
-                  className={`absolute right-0 mt-2 w-48 rounded-lg shadow-lg py-1 ${
-                    theme === "dark"
-                      ? "bg-gray-800 text-white"
-                      : "bg-white text-gray-900"
-                  } border ${theme === "dark" ? "border-gray-700" : "border-gray-200"}`}
-                >
-                  <ul className="flex flex-col gap-1">
-                    {navLinks.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className={`block px-4 py-2 transition-colors duration-200 ${
-                            theme === "dark"
-                              ? "hover:bg-gray-700"
-                              : "hover:bg-gray-100"
-                          }`}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {/* Dropdown Menu with Animation */}
+              <div
+                className={`absolute right-0 mt-2 w-48 rounded-lg shadow-lg py-1 overflow-hidden ${
+                  theme === "dark"
+                    ? "bg-gray-800 text-white"
+                    : "bg-white text-gray-900"
+                } border ${theme === "dark" ? "border-gray-700" : "border-gray-200"} transition-all duration-300 ${
+                  isOpen
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <ul className="flex flex-col gap-1">
+                  {navLinks.map((link, index) => (
+                    <li
+                      key={link.href}
+                      className={`transition-all duration-300 ${
+                        isOpen
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 -translate-x-2"
+                      }`}
+                      style={{ transitionDelay: `${index * 50}ms` }}
+                    >
+                      <Link
+                        href={link.href}
+                        className={`block px-4 py-2 transition-all duration-200 ${
+                          theme === "dark"
+                            ? "hover:bg-gray-700 hover:pl-6"
+                            : "hover:bg-gray-100 hover:pl-6"
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
