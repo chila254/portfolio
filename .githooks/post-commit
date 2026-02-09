@@ -1,0 +1,5 @@
+#!/bin/sh
+# post-commit hook: push the current branch after each commit
+# This hook is intended for the local environment where this agent operates.
+branch="$(git rev-parse --abbrev-ref HEAD)"
+git push --set-upstream origin "$branch" >/dev/null 2>&1 || git push
