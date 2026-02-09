@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
 export default function About() {
   const { theme } = useTheme();
@@ -21,7 +22,8 @@ export default function About() {
         </h1>
 
         <div className="flex flex-col gap-12">
-          <div className="animate-fade-in-up stagger-1">
+          <ScrollAnimationWrapper animation="slide-up">
+          <div>
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -42,8 +44,10 @@ export default function About() {
               problems and support digital transformation.
             </p>
           </div>
+          </ScrollAnimationWrapper>
 
-          <div className="animate-fade-in-up stagger-2">
+          <ScrollAnimationWrapper animation="slide-up" delay={100}>
+          <div>
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -104,8 +108,10 @@ export default function About() {
               </div>
             </div>
           </div>
+          </ScrollAnimationWrapper>
 
-          <div className="animate-fade-in-up stagger-3">
+          <ScrollAnimationWrapper animation="slide-up" delay={200}>
+          <div>
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -144,8 +150,10 @@ export default function About() {
               </ul>
             </div>
           </div>
+          </ScrollAnimationWrapper>
 
-          <div className="animate-fade-in-up stagger-4">
+          <ScrollAnimationWrapper animation="slide-up" delay={300}>
+          <div>
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
@@ -161,6 +169,7 @@ export default function About() {
               {"Exploring emerging IT tools and digital technologies \u2022 Learning cybersecurity and software engineering best practices \u2022 Tech and innovation documentaries \u2022 Travel and cultural exploration"}
             </p>
           </div>
+          </ScrollAnimationWrapper>
         </div>
       </main>
     </div>

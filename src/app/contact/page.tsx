@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
 export default function Contact() {
   const { theme } = useTheme();
@@ -16,17 +17,20 @@ export default function Contact() {
           Get In Touch
         </h1>
         <div className="flex flex-col gap-6">
+          <ScrollAnimationWrapper animation="slide-up">
           <p
             className={`text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}
           >
             {"I'd love to connect! Reach out via email, phone, or my GitHub profile. Always excited to discuss new projects, opportunities, or technology."}
           </p>
+          </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper animation="slide-up" delay={100}>
           <div
             className={`max-w-2xl rounded-lg p-8 ${
               theme === "dark"
                 ? "bg-gradient-to-br from-gray-900 to-gray-800"
                 : "bg-gradient-to-br from-gray-50 to-gray-100"
-            } animate-fade-in-up stagger-1`}
+            }`}
           >
             <div className="flex flex-col gap-8">
               <div>
@@ -89,6 +93,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
+          </ScrollAnimationWrapper>
         </div>
       </main>
     </div>

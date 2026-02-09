@@ -2,6 +2,7 @@
 
 import { skills } from "@/data/skills";
 import { useTheme } from "@/context/ThemeContext";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 export default function Skills() {
   const { theme } = useTheme();
@@ -24,6 +25,7 @@ export default function Skills() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ScrollAnimationWrapper animation="slide-up">
           <div>
             <h3
               className={`text-2xl font-bold mb-6 ${
@@ -52,7 +54,9 @@ export default function Skills() {
               ))}
             </ul>
           </div>
+          </ScrollAnimationWrapper>
 
+          <ScrollAnimationWrapper animation="slide-up" delay={100}>
           <div>
             <h3
               className={`text-2xl font-bold mb-6 ${
@@ -81,6 +85,7 @@ export default function Skills() {
               ))}
             </ul>
           </div>
+          </ScrollAnimationWrapper>
         </div>
       </div>
     </section>

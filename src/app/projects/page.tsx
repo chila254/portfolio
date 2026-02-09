@@ -2,6 +2,7 @@
 
 import { useTheme } from "@/context/ThemeContext";
 import ProjectCard from "@/components/ProjectCard";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -19,7 +20,7 @@ export default function Projects() {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={project.id} className={`animate-fade-in-up stagger-${(index % 5) + 1}`}>
+            <ScrollAnimationWrapper key={project.id} animation="slide-up" delay={index * 100}>
               <ProjectCard
                 title={project.title}
                 description={project.description}
@@ -27,7 +28,7 @@ export default function Projects() {
                 github={project.github}
                 live={project.live}
               />
-            </div>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </main>

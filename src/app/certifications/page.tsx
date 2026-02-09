@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
 export default function Certifications() {
   const { theme } = useTheme();
@@ -16,12 +17,13 @@ export default function Certifications() {
           {"Certifications & Achievements"}
         </h1>
         <div className="flex flex-col gap-6">
+          <ScrollAnimationWrapper animation="slide-up">
           <div
             className={`p-6 rounded-lg transition-colors duration-200 ${
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            } animate-fade-in-up stagger-1`}
+            }`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               BBIT Degree
@@ -34,12 +36,14 @@ export default function Certifications() {
               fundamentals, and software development.
             </p>
           </div>
+          </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper animation="slide-up" delay={100}>
           <div
             className={`p-6 rounded-lg transition-colors duration-200 ${
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            } animate-fade-in-up stagger-2`}
+            }`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Open Source Contribution
@@ -52,12 +56,14 @@ export default function Certifications() {
               architecture, secure coding practices, and 1000+ lines of production code.
             </p>
           </div>
+          </ScrollAnimationWrapper>
+          <ScrollAnimationWrapper animation="slide-up" delay={200}>
           <div
             className={`p-6 rounded-lg transition-colors duration-200 ${
               theme === "dark"
                 ? "bg-gray-900 hover:bg-gray-800"
                 : "bg-gray-100 hover:bg-gray-200"
-            } animate-fade-in-up stagger-3`}
+            }`}
           >
             <h3 className={`text-2xl font-bold mb-2 ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
               Final Year Project
@@ -70,6 +76,7 @@ export default function Certifications() {
               RESTful APIs, and secure health data management principles.
             </p>
           </div>
+          </ScrollAnimationWrapper>
         </div>
       </main>
     </div>
