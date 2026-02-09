@@ -19,7 +19,7 @@ export default function Footer() {
             theme === "dark" ? "text-gray-400" : "text-gray-600"
           }`}
         >
-          {"© 2025 Franklin Chilango Finyange. All rights reserved."}
+          {"© 2026 Franklin Chilango Finyange. All rights reserved."}
         </p>
         <div className="flex justify-center gap-6">
           <a

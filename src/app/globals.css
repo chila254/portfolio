@@ -27,3 +27,38 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll animation utilities */
+.scroll-fade-in {
+  opacity: 0;
+  animation: scrollFadeIn 0.8s ease-out forwards;
+}
+
+.scroll-slide-up {
+  opacity: 0;
+  animation: scrollSlideUp 0.8s ease-out forwards;
+}
+
+@keyframes scrollFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
