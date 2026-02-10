@@ -104,8 +104,11 @@ export default function Hero() {
             theme === "dark" ? "text-gray-400" : "text-gray-500"
           }`}
         >
-          I build modern, responsive web applications using React and Next.js, and have experience with
-          Flutter mobile development and Django backends.
+          I build modern, responsive web applications using React, Next.js and TypeScript, and have experience
+          developing mobile apps with Flutter and backend systems with Django. I'm passionate about creating
+          real-world solutions and recently challenged myself to design and deploy my portfolio entirely from a
+          tablet — proving that limitations shouldn't stop building. I'm always learning, building and looking for
+          opportunities to grow as a developer and contribute to meaningful projects.
         </motion.p>
 
         {/* CTA Buttons */}
