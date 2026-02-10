@@ -94,7 +94,7 @@ export default function Hero() {
             theme === "dark" ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          BBIT Graduate | Full-Stack Developer | IT Support Specialist
+          Frontend-Focused Full-Stack Developer
         </motion.p>
 
         {/* Description */}
