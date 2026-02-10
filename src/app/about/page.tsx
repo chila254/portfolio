@@ -36,12 +36,47 @@ export default function About() {
                 theme === "dark" ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              Energetic and adaptable BBIT graduate with hands-on experience in IT support, systems
-              configuration, and applied software development. Proven ability to design and deploy
-              real-world applications including an open-source Flutter streaming platform (MaxStream).
-              Strong foundation in cybersecurity fundamentals, system troubleshooting, and API-driven
-              application development. Passionate about leveraging technology to solve business
-              problems and support digital transformation.
+              I'm a BBIT graduate and software developer with a strong foundation in IT support, systems
+              configuration and applied software development. I enjoy working across both the technical and creative
+              sides of technology — from troubleshooting systems and configuring environments to building modern,
+              user-focused applications.
+            </p>
+            <p
+              className={`text-lg leading-relaxed mt-4 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              I've had the opportunity to design and deploy real-world projects including MaxStream, an
+              open-source android movie and TV series streaming platform built with Flutter, Firebase and REST APIs.
+              Through this and other projects, I've gained hands-on experience in API integration, authentication
+              systems, local databases and modern UI/UX patterns while applying clean architecture and secure coding practices.
+            </p>
+            <p
+              className={`text-lg leading-relaxed mt-4 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              My background in IT support and networking has given me practical experience with system setup,
+              troubleshooting, hardware diagnostics and endpoint configuration. This helps me approach development
+              with a broader understanding of how software runs in real environments, not just in code editors.
+            </p>
+            <p
+              className={`text-lg leading-relaxed mt-4 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              I'm particularly interested in frontend and full-stack development using technologies like React,
+              Next.js, TypeScript and modern UI frameworks. I enjoy building applications that solve real problems
+              and continuously challenge myself to learn new tools and improve my skills — whether it's developing
+              full applications, experimenting with new technologies or deploying projects from unconventional setups.
+            </p>
+            <p
+              className={`text-lg leading-relaxed mt-4 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              Currently, I'm looking for opportunities where I can grow as a developer, contribute to meaningful
+              products and collaborate with teams that value learning, innovation and practical problem-solving.
             </p>
           </div>
           </ScrollAnimationWrapper>
