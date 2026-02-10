@@ -23,7 +23,11 @@ export default function About() {
 
         <div className="flex flex-col gap-12">
           <ScrollAnimationWrapper animation="slide-up">
-          <div>
+          <div
+            className={`p-6 rounded-lg transition-colors duration-200 ${
+              theme === "dark" ? "bg-gray-900 hover:bg-gray-800" : "bg-gray-100 hover:bg-gray-200"
+            }`}
+          >
             <h2
               className={`text-2xl font-bold mb-4 ${
                 theme === "dark" ? "text-white" : "text-gray-900"
