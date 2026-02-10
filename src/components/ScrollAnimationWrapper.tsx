@@ -16,7 +16,7 @@ export default function ScrollAnimationWrapper({
   className = '',
   delay = 0,
 }: ScrollAnimationWrapperProps) {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible, viewCount } = useScrollAnimation();
 
   const animationClass = animation === 'fade-in' ? 'scroll-fade-in' : 'scroll-slide-up';
   const delayStyle = delay > 0 ? { animationDelay: `${delay}ms` } : {};
@@ -24,6 +24,7 @@ export default function ScrollAnimationWrapper({
   return (
     <div
       ref={ref}
+      key={viewCount}
       className={`${isVisible ? animationClass : 'opacity-0'} ${className}`}
       style={isVisible ? delayStyle : { opacity: 0 }}
     >

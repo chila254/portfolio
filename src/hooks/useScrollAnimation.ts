@@ -11,13 +11,17 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
   const { threshold = 0.1, rootMargin = '0px 0px -50px 0px' } = options;
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [viewCount, setViewCount] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          setViewCount(prev => prev + 1);
+        } else {
+          // Reset visibility when element scrolls out of view
+          setIsVisible(false);
         }
       },
       {
@@ -37,5 +41,5 @@ export function useScrollAnimation(options: UseScrollAnimationOptions = {}) {
     };
   }, [threshold, rootMargin]);
 
-  return { ref, isVisible };
+  return { ref, isVisible, viewCount };
 }
