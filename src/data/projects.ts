@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "Chilatech Company - Digital Transformation Agency",
     description: "Founded and built a full-service digital agency delivering 100+ web and Android applications to 50+ clients with 99% satisfaction rate. Specializes in custom website development and enterprise Android applications, helping businesses thrive in the technology-driven world.",
-    tags: ["React", "Next.js", "Android", "Web Development", "Leadership"],
+    tags: ["React", "Next.js", "Android", "Supabase", "PostgreSQL", "Tailwind", "CSS", "JavaScript", "Web Development", "Leadership"],
     github: undefined,
     live: "https://chilatech-company.vercel.app/",
   },
