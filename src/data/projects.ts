@@ -23,4 +23,12 @@ export const projects = [
     github: "https://github.com",
     live: "https://github.com",
   },
+  {
+    id: 4,
+    title: "Cybersecurity Incident Tracker + Vulnerability Dashboard",
+    description: "Enterprise-grade incident and vulnerability management platform with network monitoring capabilities. Features real-time statistics, incident management with CRUD operations, CVE tracking, WiFi device tracking, DNS query logging, email/Slack notifications, comprehensive audit logs, and role-based access control.",
+    tags: ["Next.js", "FastAPI", "PostgreSQL", "Supabase", "Tailwind CSS", "React", "Python", "JWT Authentication", "Network Monitoring"],
+    github: "https://github.com/chila254/cybersecurity-tracker",
+    live: "https://cybersecurity-tracker.vercel.app/",
+  },
 ];

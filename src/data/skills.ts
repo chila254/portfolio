@@ -3,6 +3,7 @@ export const skills = {
     "Flutter & Dart",
     "Python",
     "Django & Django REST Framework",
+    "FastAPI",
     "Firebase Authentication & Firestore",
     "REST API Integration",
     "SQL & SQLite Database Design",
