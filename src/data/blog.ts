@@ -180,7 +180,7 @@ Ensuring video calls work seamlessly across different networks.
 
 1. **Database Indexing**: Indexed frequently queried fields (patient_id, doctor_id, appointment_date)
 2. **Caching**: Used Redis to cache doctor availability and common queries
-3. **Lazy Loading**: Optimized querysets with `select_related()` and `prefetch_related()`
+3. **Lazy Loading**: Optimized querysets with select_related() and prefetch_related()
 4. **Pagination**: Implemented cursor-based pagination for large datasets
 
 ### Results & Learnings
