@@ -203,7 +203,7 @@ export default function BlogPost() {
             >
               Have thoughts on this article? Share them with me on{" "}
               <a
-                href="https://x.com"
+                href="https://www.facebook.com/share/14XzKvbSWz7/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`font-medium transition-colors ${
@@ -212,7 +212,7 @@ export default function BlogPost() {
                     : "text-blue-600 hover:text-blue-500"
                 }`}
               >
-                Twitter
+                Facebook
               </a>
               {" "}or{" "}
               <a
