@@ -3,14 +3,35 @@
 import { useTheme } from "@/context/ThemeContext";
 import { blogPosts } from "@/data/blog";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default function BlogPost() {
   const { theme } = useTheme();
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const params = useParams();
+  const slug = params?.slug as string;
+  
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
-    notFound();
+    return (
+      <div className={`min-h-screen flex items-center justify-center ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"
+      }`}>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+          <p className={`mb-6 ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
+            The blog post you're looking for doesn't exist.
+          </p>
+          <Link href="/blog" className={`font-medium transition-colors ${
+            theme === "dark"
+              ? "text-blue-400 hover:text-blue-300"
+              : "text-blue-600 hover:text-blue-500"
+          }`}>
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   // Parse markdown-like content into HTML
