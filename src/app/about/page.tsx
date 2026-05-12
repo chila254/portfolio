@@ -180,12 +180,12 @@ export default function About() {
                   theme === "dark" ? "text-gray-400" : "text-gray-700"
                 }`}
               >
-                <li>Troubleshot and repaired laptops, desktops, and printers for end users</li>
-                <li>Installed and configured Windows operating systems in networked environments</li>
-                <li>Set up structured cabling, UPS systems, and network hardware for client offices</li>
-                <li>Installed and configured CCTV and PABX systems</li>
-                <li>Performed data recovery and hardware diagnostics</li>
-                <li>Assisted with software installations, patching, and system updates</li>
+                <li>Hardware Troubleshooting & Repair</li>
+                <li>Windows OS Installation & Configuration</li>
+                <li>Network Infrastructure Setup</li>
+                <li>CCTV & PABX System Installation</li>
+                <li>Data Recovery & Hardware Diagnostics</li>
+                <li>Software Installation & System Updates</li>
               </ul>
             </div>
           </div>

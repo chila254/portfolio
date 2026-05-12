@@ -44,7 +44,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:via-purple-500 group-hover:to-pink-400 transition-all duration-300">
-              Franklin Chilango
+              Franklin Chilango Finyange
             </span>
           </Link>
 
