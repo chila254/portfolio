@@ -9,11 +9,10 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Inter', var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), 'JetBrains Mono', monospace;
+/* Custom font variables */
+:root {
+  --font-inter: 'Inter', var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono-custom: var(--font-geist-mono), 'JetBrains Mono', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,7 +34,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-inter);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -210,11 +209,39 @@ p {
 
 /* Custom Button Styles */
 .btn-primary {
-  @apply px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #1d4ed8, #6d28d9);
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
 }
 
 .btn-secondary {
-  @apply px-6 py-3 rounded-xl font-semibold border-2 transition-all duration-300 transform hover:scale-105 active:scale-95;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: 2px solid;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
 }
 
 /* Responsive Design Helpers */
