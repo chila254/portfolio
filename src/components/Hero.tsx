@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { useTheme } from "@/context/ThemeContext";
 import { Code, Smartphone, Database, Palette, ChevronDown } from "lucide-react";
+import Hero3DCube from "./Hero3DCube";
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -155,7 +156,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className={`text-xl sm:text-2xl lg:text-3xl font-light ${
-              theme === "dark" ? "text-gray-300" : "text-gray-600"
+              theme === "dark" ? "text-gray-300" : "text-gray-800"
             }`}>
               Building digital experiences that matter
             </p>
@@ -177,7 +178,7 @@ export default function Hero() {
                 className={`px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm border transition-all duration-300 ${
                   theme === "dark"
                     ? "bg-slate-800/50 text-slate-300 border-slate-700 hover:bg-slate-700/50"
-                    : "bg-white/50 text-slate-700 border-slate-200 hover:bg-white/70"
+                    : "bg-white/80 text-slate-900 border-slate-300 hover:bg-white"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 transition={{ delay: index * 0.1 }}
@@ -193,17 +194,17 @@ export default function Hero() {
             className="max-w-3xl mx-auto mb-12"
           >
             <p className={`text-lg sm:text-xl leading-relaxed ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
+              theme === "dark" ? "text-gray-400" : "text-gray-800"
             }`}>
               I craft beautiful, functional applications using modern technologies.
               From responsive web apps with{" "}
-              <span className="font-semibold text-blue-500">React & Next.js</span>{" "}
+              <span className={`font-semibold ${theme === "dark" ? "text-blue-400" : "text-blue-700"}`}>React & Next.js</span>{" "}
               to native mobile experiences with{" "}
-              <span className="font-semibold text-purple-500">Flutter & Kotlin</span>
+              <span className={`font-semibold ${theme === "dark" ? "text-purple-400" : "text-purple-700"}`}>Flutter & Kotlin</span>
               , I bring ideas to life through code.
             </p>
             <p className={`text-lg sm:text-xl leading-relaxed mt-4 ${
-              theme === "dark" ? "text-gray-400" : "text-gray-600"
+              theme === "dark" ? "text-gray-400" : "text-gray-800"
             }`}>
               Currently contributing to{" "}
               <a
@@ -253,13 +254,18 @@ export default function Hero() {
             </motion.a>
           </motion.div>
 
+          {/* 3D Rotating Tech Cube */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <Hero3DCube />
+          </motion.div>
+
           {/* Interactive Skills Grid */}
           <motion.div
             variants={itemVariants}
             className="mb-12"
           >
             <h3 className={`text-lg font-semibold mb-6 ${
-              theme === "dark" ? "text-gray-300" : "text-gray-700"
+              theme === "dark" ? "text-gray-300" : "text-gray-900"
             }`}>
               Technologies I work with
             </h3>

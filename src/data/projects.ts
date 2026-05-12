@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description: "A modern Android music player with YouTube Music integration, powerful audio features, Google Cast support, voice control using VOSK, and a beautiful Material 3 interface. Supports Android phones, Android TV, and Google TV with features like live synchronized lyrics, equalizer, sleep timer, and hands-free voice commands.",
     tags: ["Kotlin", "Jetpack Compose", "Material 3", "Android", "ExoPlayer", "VOSK", "Google Cast", "Voice Control", "YouTube Music"],
     github: "https://github.com/TeamAuraMusic/AuraMusic",
-    live: undefined,
+    live: "https://www.auramusic.site/",
     images: ["/images/auramusic-1.jpg", "/images/auramusic-2.jpg"],
   },
 ];
