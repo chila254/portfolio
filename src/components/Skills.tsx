@@ -52,7 +52,14 @@ export default function Skills() {
       title: "IT Support",
       icon: Wrench,
       color: "from-gray-500 to-slate-500",
-      skills: ["Hardware Troubleshooting", "Data Analysis (Excel, SPSS)", "WordPress"],
+      skills: [
+        "Hardware Troubleshooting & Repair",
+        "Windows OS Installation & Configuration",
+        "Network Infrastructure Setup",
+        "CCTV & PABX System Installation",
+        "Data Recovery & Hardware Diagnostics",
+        "Software Installation & System Updates"
+      ],
       description: "Technical support and system maintenance"
     },
     {
