@@ -3,13 +3,13 @@
 import { useTheme } from "@/context/ThemeContext";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { FolderOpen, Code, ExternalLink } from "lucide-react";
 
 export default function Projects() {
   const { theme } = useTheme();
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -19,7 +19,7 @@ export default function Projects() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
