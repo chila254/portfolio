@@ -43,7 +43,7 @@ export default function About() {
               I'm a BBIT graduate and software developer with a strong foundation in IT support, systems
               configuration and applied software development. I enjoy working across both the technical and creative
               sides of technology — from troubleshooting systems and configuring environments to building modern,
-              user-focused applications.
+              user-focused applications using technologies like React, Next.js, Flutter, Django, Kotlin, and Android.
             </p>
             <p
               className={`text-lg leading-relaxed mt-4 ${

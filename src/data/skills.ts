@@ -1,6 +1,7 @@
 export const skills = {
   technical: [
     "Flutter & Dart",
+    "Kotlin & Android Development",
     "Python",
     "Django & Django REST Framework",
     "FastAPI",
