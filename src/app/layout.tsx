@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Franklin Chilango Finyange | Developer Portfolio",
-  description: "BBIT Graduate | Frontend Developer | React/Next.js | IT Support | Software Development",
+  description: "BBIT Graduate | Frontend Developer | React/Next.js | IT Support | Software Development | AuraMusic Contributor",
 };
 
 export default function RootLayout({
