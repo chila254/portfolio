@@ -1,22 +1,25 @@
 "use client";
 
 import { useTheme } from "@/context/ThemeContext";
+import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
-export default function ProjectCard({ title, description, tags, github, live }: {
+export default function ProjectCard({ title, description, tags, github, live, images }: {
   title: string;
   description: string;
   tags: string[];
   github?: string;
   live?: string;
+  images?: string[];
 }) {
   const { theme } = useTheme();
 
   return (
     <div
-      className={`p-6 rounded-lg transition-all duration-300 ${
+      className={`p-6 rounded-lg transition-all duration-300 relative overflow-hidden ${
         theme === "dark"
-          ? "bg-gray-900 hover:bg-gray-800 hover:shadow-lg hover:shadow-blue-500/10"
-          : "bg-gray-100 hover:bg-gray-200 hover:shadow-lg hover:shadow-blue-400/10"
+          ? "bg-gray-900 hover:bg-gradient-to-br hover:from-gray-800 hover:to-gray-900 hover:shadow-xl hover:shadow-blue-500/20"
+          : "bg-gray-100 hover:bg-gradient-to-br hover:from-gray-200 hover:to-gray-100 hover:shadow-xl hover:shadow-blue-400/20"
       }`}
     >
       <h3
@@ -26,6 +29,20 @@ export default function ProjectCard({ title, description, tags, github, live }: 
       >
         {title}
       </h3>
+      {images && images.length > 0 && (
+        <div className="mb-4 grid grid-cols-2 gap-2">
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              src={image}
+              alt={`${title} screenshot ${index + 1}`}
+              width={200}
+              height={400}
+              className="rounded-md object-cover w-full h-32"
+            />
+          ))}
+        </div>
+      )}
       <p
         className={`mb-4 ${
           theme === "dark" ? "text-gray-400" : "text-gray-600"
@@ -53,12 +70,13 @@ export default function ProjectCard({ title, description, tags, github, live }: 
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className={`font-medium transition-colors ${
+            className={`flex items-center gap-2 font-medium transition-colors ${
               theme === "dark"
                 ? "text-blue-400 hover:text-blue-300"
                 : "text-blue-600 hover:text-blue-500"
             }`}
           >
+            <Github size={16} />
             GitHub
           </a>
         )}
@@ -67,12 +85,13 @@ export default function ProjectCard({ title, description, tags, github, live }: 
             href={live}
             target="_blank"
             rel="noopener noreferrer"
-            className={`font-medium transition-colors ${
+            className={`flex items-center gap-2 font-medium transition-colors ${
               theme === "dark"
                 ? "text-blue-400 hover:text-blue-300"
                 : "text-blue-600 hover:text-blue-500"
             }`}
           >
+            <ExternalLink size={16} />
             Live Demo
           </a>
         )}

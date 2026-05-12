@@ -1,4 +1,14 @@
-export const projects = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  github?: string;
+  live?: string;
+  images?: string[];
+}
+
+export const projects: Project[] = [
   {
     id: 1,
     title: "Chilatech Company - Digital Transformation Agency",
@@ -30,5 +40,14 @@ export const projects = [
     tags: ["Next.js", "FastAPI", "PostgreSQL", "Supabase", "Tailwind CSS", "React", "Python", "JWT Authentication", "Network Monitoring"],
     github: "https://github.com/chila254/cybersecurity-tracker",
     live: "https://cybersecurity-tracker.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "AuraMusic - Modern Android Music Player",
+    description: "A modern Android music player with YouTube Music integration, powerful audio features, Google Cast support, voice control using VOSK, and a beautiful Material 3 interface. Supports Android phones, Android TV, and Google TV with features like live synchronized lyrics, equalizer, sleep timer, and hands-free voice commands.",
+    tags: ["Kotlin", "Jetpack Compose", "Material 3", "Android", "ExoPlayer", "VOSK", "Google Cast", "Voice Control", "YouTube Music"],
+    github: "https://github.com/TeamAuraMusic/AuraMusic",
+    live: undefined,
+    images: ["/images/auramusic-1.jpg", "/images/auramusic-2.jpg"],
   },
 ];

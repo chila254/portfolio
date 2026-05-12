@@ -27,6 +27,7 @@ export default function Projects() {
                 tags={project.tags}
                 github={project.github}
                 live={project.live}
+                images={project.images}
               />
             </ScrollAnimationWrapper>
           ))}
