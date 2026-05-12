@@ -7,10 +7,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-/* Custom font variables */
-:root {
   --font-inter: 'Inter', var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   --font-mono-custom: var(--font-geist-mono), 'JetBrains Mono', monospace;
 }
