@@ -2,10 +2,12 @@ export const skills = {
   technical: [
     "Flutter & Dart",
     "Kotlin & Android Development",
+    "Jetpack Compose & Material 3",
     "Python",
     "Django & Django REST Framework",
     "FastAPI",
-    "Firebase Authentication & Firestore",
+    "Firebase (Auth, Firestore, RTDB, Cloud Sync)",
+    "Media3 ExoPlayer & HLS Streaming",
     "REST API Integration",
     "SQL & SQLite Database Design",
     "Git & GitHub",
