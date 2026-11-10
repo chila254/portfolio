@@ -51,7 +51,8 @@ export default function About() {
               }`}
             >
               I've had the opportunity to design and deploy real-world projects including MaxStream, an
-              open-source android movie and TV series streaming platform built with Flutter, Firebase and REST APIs.
+              open-source streaming platform for Android, Android TV and desktop built with Flutter, Kotlin and Firebase,
+              and Calyth, a multi-model AI assistant backed by Kotlin/Ktor.
               Through this and other projects, I've gained hands-on experience in API integration, authentication
               systems, local databases and modern UI/UX patterns while applying clean architecture and secure coding practices.
             </p>
